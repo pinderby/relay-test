@@ -3,17 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "react-scripts": "2.1.1"
+    "babel-plugin-relay": "^1.7.0",
+    "graphql": "^14.0.2",
+    "react-scripts": "2.1.1",
+    "relay-compiler": "^1.7.0"
   },
   "dependencies": {
     "react": "^16.6.3",
-    "react-dom": "^16.6.3"
+    "react-app-rewired": "^1.6.2",
+    "react-dom": "^16.6.3",
+    "react-relay": "^1.7.0",
+    "relay-runtime": "^1.7.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-app-rewired build",
+    "start": "react-app-rewired start",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "relay": "curl https://raw.githubusercontent.com/relayjs/relay-examples/master/todo/data/schema.graphql -o ./src/graphql.schema && relay-compiler --src ./src --schema ./src/graphql.schema"
   },
   "eslintConfig": {
     "extends": "react-app"
